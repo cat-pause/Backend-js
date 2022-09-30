@@ -1,40 +1,51 @@
-@charset 'utf-8';
-*{margin:0; padding:0;}
-h1{
-    width:500px;
-    padding:2rem;
-    background-color: antiquewhite;
+@charset "utf-8";
+
+* {
+    margin: 0;
+    padding: 0;
+}
+a {
+    color: inherit;
+    text-decoration: none;
+}
+ul {
+    list-style: none;
+}
+header {
     text-align: center;
-    text-transform: uppercase;
 }
-p{
-    max-width:500px;
-    border:1px solid dodgerblue;
-    padding:2rem;
-    transition: all .3s;
+.container {
+    max-width: 1190px;
+    margin: 0 auto;
+    text-align: center;
 }
-p:hover{
-    transform: rotate(10deg);
+.container button {
+    background: dodgerblue;
+    padding: .5rem 1rem;
+    margin: 1rem 0;
+    border: 0;
+    color: white;
 }
-.container{
-    width:1190px;
-    margin:0 auto;
-}
-.view{
-    height:400px;
+.views {
+    height: 500px;
     overflow: hidden;
 }
-.view img{
-    width:100%;
-    height:400px;
+.views img { /* 사진이 너무커서 가로폭에 맞춰서 비율에 맞게 조정*/
+    width: 100%;
     object-fit: cover;
 }
-button{
-    width:200px;
-    line-height: 32px;
-    margin:30px auto;
-    background-color: dodgerblue;
-    color:aliceblue;
-    border:none;
+
+nav {
+    background: black;
+    color: white;
+    padding: .5rem;
+    margin: 1rem 0;
+}
+#gnb {
+    display: flex;
+    justify-content: center;
+    column-gap: 1rem;
+}
+#reserve{
     cursor: pointer;
 }
