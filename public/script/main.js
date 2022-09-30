@@ -1,5 +1,5 @@
 $(function(){
-    $("#reserve").click(function(){
+    $("#index_btn").click(function(){
         location.href = "/reserve";
     })
 })

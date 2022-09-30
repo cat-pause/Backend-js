@@ -18,16 +18,27 @@ app.use(morgan("dev")); // 개발 끝나고 배포할때는 combined 사용(git 
 app.get('/', function (req, res) { // get 요청이 들어오면 응답
     //res.send('Hello World'); // 서버에서 text로 응답
     res.sendFile(__dirname+"/public/main.html"); // HTML 파일로 응답
-    res.render('index', {title:'pug 템플릿 엔진 적용', message:'렌더링 성공!'});
+    res.render('index', {title:'hanul tour', message:'렌더링 성공!'});
 });
 
 app.get('/reserve', function(req, res){
-    res.sendFile(__dirname+"/public/reserve.html");
+    res.render('reserve', {title:'hanul tour'})
+})
+app.get('/tour', function(req, res){
+    res.render('tour', {title:'hanul tour'})
+})
+app.get('/cs', function(req, res){
+    res.render('cs', {title:'hanul tour'})
 })
 
 app.post('/send_reserve', function (req, res) { // get 요청이 들어오면 응답
     // res.send('post 요청 페이지'); // 서버에서 text로 응답
-    res.send(req.body.guest_name+"님, 환영합니다"); //bodyParser가 이해하고 출력
+    // res.send(req.body.guest_name+"님, 환영합니다"); //bodyParser가 이해하고 출력
+    if(req.body.guest_name == "홍길동"){
+        res.send(req.body.guest_name + "님, 환영합니다")
+    }else{
+        res.send("회원가입 페이지로 이동합니다.")
+    }
     // res.sendFile(__dirname+"/public/reserve.html"); // HTML 파일로 응답
 });
 
